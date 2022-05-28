@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="webstyle.css"/>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+	<ul>
+		<li><a href="../CPSC3700/PersWeb.html">Home</a></li>
+		<li><a href="../CPSC3700/MusicTheory.html">Music Theory</a></li>
+		<li><a href="../CPSC3700/About.html">About</a></li>
+	</ul>
+</head>
+<h1>Song Shaper</h1>
+<!-- <p> 
+This website's goal is to allow the user to create short pieces of music by pressing diffferent buttons.
+When pressing the key on the space it changes the color and changes back when the key is released.
+</p> -->
+<img src="piano_close.jpg", alt="Cover Piano", class="center">
+
+
+
+<audio id="myAudio">
+  <source src="piano_B.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<body>
+
+<!--<button onclick="playAudio()" type="button">Play Audio</button>-->
+<div class='square red center' id='AKey'>A</div>
+<div class='square green center' id='SKey'>S</div>
+<div class='square blue center' id='DKey'>D</div>
+
+<script>
+var x = document.getElementById("myAudio");
+
+document.addEventListener("keydown", (evt) => {
+	var keyName = evt.key;
+	if(keyName == 'a'){
+		document.getElementById('AKey').style.backgroundColor = 'tomato';
+	}
+	else if(keyName == 's'){
+		document.getElementById('SKey').style.backgroundColor = 'lime';
+	}
+	else if(keyName == 'd'){
+		document.getElementById('DKey').style.backgroundColor = 'aqua';
+	}
+}, false);
+document.addEventListener("keyup", (evt) => {
+	var keyName = evt.key;
+	if(keyName == 'a'){
+		document.getElementById('AKey').style.backgroundColor = 'red';
+	}
+	else if(keyName == 's'){
+		document.getElementById('SKey').style.backgroundColor = 'green';
+	}
+	else if(keyName == 'd'){
+		document.getElementById('DKey').style.backgroundColor = 'blue';
+	}
+}, false);
+
+function playAudio() {
+  x.currentTime = 0;
+  x.play(); 
+} 
+</script>
+</body>
+
+
+</html>
