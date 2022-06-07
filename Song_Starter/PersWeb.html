@@ -4,9 +4,9 @@
 	<link rel="stylesheet" href="webstyle.css"/>
 	<link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
 	<ul>
-		<li><a href="../CPSC3700/PersWeb.html">Home</a></li>
-		<li><a href="../CPSC3700/MusicTheory.html">Music Theory</a></li>
-		<li><a href="../CPSC3700/About.html">About</a></li>
+		<li><a href="../Song_Starter/PersWeb.html">Home</a></li>
+		<li><a href="../Song_Starter/MusicTheory.html">Music Theory</a></li>
+		<li><a href="../Song_Starter/About.html">About</a></li>
 	</ul>
 </head>
 <h1>Song Shaper</h1>
@@ -14,53 +14,214 @@
 This website's goal is to allow the user to create short pieces of music by pressing diffferent buttons.
 When pressing the key on the space it changes the color and changes back when the key is released.
 </p> -->
-<img src="piano_close.jpg", alt="Cover Piano", class="center">
+<img src="../Song_Starter/Images/piano_close.jpg", alt="Cover Piano", class="center">
 
 
 
-<audio id="myAudio">
+<!-- <audio id="piano_B">
   <source src="piano_B.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
+</audio> -->
+<audio id="piano_F1">
+	<source src="../Song_Starter/Sounds/F1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Gb1">
+	<source src="../Song_Starter/Sounds/Gb1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_G1">
+	<source src="../Song_Starter/Sounds/G1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Ab1">
+	<source src="../Song_Starter/Sounds/Ab1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_A1">
+	<source src="../Song_Starter/Sounds/A1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Bb1">
+	<source src="../Song_Starter/Sounds/Bb1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_B1">
+	<source src="../Song_Starter/Sounds/B1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_C1">
+	<source src="../Song_Starter/Sounds/C1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Db1">
+	<source src="../Song_Starter/Sounds/Db1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_D1">
+	<source src="../Song_Starter/Sounds/D1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Eb1">
+	<source src="../Song_Starter/Sounds/Eb1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_E1">
+	<source src="../Song_Starter/Sounds/E1.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_F2">
+	<source src="../Song_Starter/Sounds/F2.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Gb2">
+	<source src="../Song_Starter/Sounds/Gb2.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_G2">
+	<source src="../Song_Starter/Sounds/G2.mp3" type="audio/mpeg">
+</audio>
+<audio id="piano_Ab2">
+	<source src="../Song_Starter/Sounds/Ab2.mp3" type="audio/mpeg">
 </audio>
 <body>
+<p class="center">Press the keys A, S, D ... K and M ... , keys to play the music!</p>
+<div class='grid-container'>
+	<div class='square blue0' id='AKey' style="text-align:center;color:aqua">F</div>
+	<div class='square blue1' id='SKey' style="text-align:center;color:aqua">F#</div>
+	<div class='square blue2' id='DKey' style="text-align:center;color:aqua">G</div>
+	<div class='square blue3' id="FKey" style="text-align:center;color:aqua">Ab</div>
 
-<!--<button onclick="playAudio()" type="button">Play Audio</button>-->
-<div class='square red center' id='AKey'>A</div>
-<div class='square green center' id='SKey'>S</div>
-<div class='square blue center' id='DKey'>D</div>
+	<div class="square blue4" id="GKey" style="text-align:center;color:aqua">A</div>
+	<div class="square blue5" id="HKey" style="text-align:center;color:aqua">Bb</div>
+	<div class="square blue6" id="JKey" style="text-align:center;color:aqua">B</div>
+	<div class="square blue7" id="KKey" style="text-align:center;color:aqua">C</div>
+
+	<div class="square blue8" id="ZKey" style="text-align:center;color:aqua">C#</div>
+	<div class="square blue9" id="XKey" style="text-align:center;color:aqua">D</div>
+	<div class="square blue10" id="CKey" style="text-align:center;color:aqua">D#</div>
+	<div class="square blue11" id="VKey" style="text-align:center;color:aqua">E</div>
+
+	<div class="square blue12" id="BKey" style="text-align:center;color:aqua">F</div>
+	<div class="square blue13" id="NKey" style="text-align:center;color:aqua">F#</div>
+	<div class="square blue14" id="MKey" style="text-align:center;color:aqua">G</div>
+	<div class="square blue15" id=",Key" style="text-align:center;color:aqua">Ab</div>
+</div>
 
 <script>
-var x = document.getElementById("myAudio");
+
+function playAudio(name) {
+	var x = document.getElementById(name);
+  	x.currentTime = 0;
+  	x.play(); 
+} 
 
 document.addEventListener("keydown", (evt) => {
 	var keyName = evt.key;
 	if(keyName == 'a'){
-		document.getElementById('AKey').style.backgroundColor = 'tomato';
+		document.getElementById('AKey').style.backgroundColor = 'white';
+		playAudio('piano_F1');
 	}
 	else if(keyName == 's'){
-		document.getElementById('SKey').style.backgroundColor = 'lime';
+		document.getElementById('SKey').style.backgroundColor = 'white';
+		playAudio('piano_Gb1');
 	}
 	else if(keyName == 'd'){
-		document.getElementById('DKey').style.backgroundColor = 'aqua';
+		document.getElementById('DKey').style.backgroundColor = 'white';
+		playAudio('piano_G1');
 	}
-}, false);
-document.addEventListener("keyup", (evt) => {
-	var keyName = evt.key;
-	if(keyName == 'a'){
-		document.getElementById('AKey').style.backgroundColor = 'red';
+	else if(keyName == 'f'){
+		document.getElementById('FKey').style.backgroundColor = 'white';
+		playAudio('piano_Ab1');
 	}
-	else if(keyName == 's'){
-		document.getElementById('SKey').style.backgroundColor = 'green';
+	else if(keyName == 'g'){
+		document.getElementById('GKey').style.backgroundColor = 'white';
+		playAudio('piano_A1');
 	}
-	else if(keyName == 'd'){
-		document.getElementById('DKey').style.backgroundColor = 'blue';
+	else if(keyName == 'h'){
+		document.getElementById('HKey').style.backgroundColor = 'white';
+		playAudio('piano_Bb1');
+	}
+	else if(keyName == 'j'){
+		document.getElementById('JKey').style.backgroundColor = 'white';
+		playAudio('piano_B1');
+	}
+	else if(keyName == 'k'){
+		document.getElementById('KKey').style.backgroundColor = 'white';
+		playAudio('piano_C1');
+	}
+	else if(keyName == 'z'){
+		document.getElementById('ZKey').style.backgroundColor = 'white';
+		playAudio('piano_Db1');
+	}
+	else if(keyName == 'x'){
+		document.getElementById('XKey').style.backgroundColor = 'white';
+		playAudio('piano_D1');
+	}
+	else if(keyName == 'c'){
+		document.getElementById('CKey').style.backgroundColor = 'white';
+		playAudio('piano_Eb1');
+	}
+	else if(keyName == 'v'){
+		document.getElementById('VKey').style.backgroundColor = 'white';
+		playAudio('piano_E1');
+	}
+	else if(keyName == 'b'){
+		document.getElementById('BKey').style.backgroundColor = 'white';
+		playAudio('piano_F2');
+	}
+	else if(keyName == 'n'){
+		document.getElementById('NKey').style.backgroundColor = 'white';
+		playAudio('piano_Gb2');
+	}
+	else if(keyName == 'm'){
+		document.getElementById('MKey').style.backgroundColor = 'white';
+		playAudio('piano_G2');
+	}
+	else if(keyName == ','){
+		document.getElementById(',Key').style.backgroundColor = 'white';
+		playAudio('piano_Ab2');
 	}
 }, false);
 
-function playAudio() {
-  x.currentTime = 0;
-  x.play(); 
-} 
+
+document.addEventListener("keyup", (evt) => {
+	var keyName = evt.key;
+	if(keyName == 'a'){
+		document.getElementById('AKey').style.backgroundColor = '#000000';
+	}
+	else if(keyName == 's'){
+		document.getElementById('SKey').style.backgroundColor = '#000010';
+	}
+	else if(keyName == 'd'){
+		document.getElementById('DKey').style.backgroundColor = '#000020';
+	}
+	else if(keyName == 'f'){
+		document.getElementById('FKey').style.backgroundColor = '#000030';
+	}
+	else if(keyName == 'g'){
+		document.getElementById('GKey').style.backgroundColor = '#000040';
+	}
+	else if(keyName == 'h'){
+		document.getElementById('HKey').style.backgroundColor = '#000050';
+	}
+	else if(keyName == 'j'){
+		document.getElementById('JKey').style.backgroundColor = '#000060';
+	}
+	else if(keyName == 'k'){
+		document.getElementById('KKey').style.backgroundColor = '#000070';
+	}
+	else if(keyName == 'z'){
+		document.getElementById('ZKey').style.backgroundColor = '#000080';
+	}
+	else if(keyName == 'x'){
+		document.getElementById('XKey').style.backgroundColor = '#000090';
+	}
+	else if(keyName == 'c'){
+		document.getElementById('CKey').style.backgroundColor = '#0000a0';
+	}
+	else if(keyName == 'v'){
+		document.getElementById('VKey').style.backgroundColor = '#0000b0';
+	}
+	else if(keyName == 'b'){
+		document.getElementById('BKey').style.backgroundColor = '#0000c0';
+	}
+	else if(keyName == 'n'){
+		document.getElementById('NKey').style.backgroundColor = '#0000d0';
+	}
+	else if(keyName == 'm'){
+		document.getElementById('MKey').style.backgroundColor = '#0000e0';
+	}
+	else if(keyName == ','){
+		document.getElementById(',Key').style.backgroundColor = '#0000f0';
+	}
+}, false);
 </script>
 </body>
 
